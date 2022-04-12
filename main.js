@@ -10,6 +10,7 @@ const args = process.argv.slice(2);
 runApp(args);
 
 function generateRandomUsers(count) {
+
     const users = [];
     for (let i = 0; i < count; i++) {
         const firstName = faker.name.firstName();
@@ -24,6 +25,7 @@ function generateRandomUsers(count) {
         });
     }
     return users;
+
 }
 
 function generateHackathonEntries(user_ids) {
@@ -43,6 +45,7 @@ function generateHackathonEntries(user_ids) {
 
 
 function generateRandomHackathon(entries) {
+
     const random_boolean = Math.random() < 0.4;
     const random_date = faker.date.past();
     const location = random_boolean ? `${faker.address.country()}` : 'Remote';
@@ -56,11 +59,12 @@ function generateRandomHackathon(entries) {
         entries: entries,
     };
     return hackathon;
+
 }
 
 function runApp(args) {
 
-    //Generate random users, and expect their ObjectIDs in the POST response
+    //Generate random users, and expect their userIds in the POST response
     const users = generateRandomUsers(10);
     var user_ids = [];
     //post all users in bulk
@@ -87,4 +91,5 @@ function runApp(args) {
         .catch(err => {
             console.log(err);
         });
+        
 }
