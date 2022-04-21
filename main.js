@@ -36,7 +36,7 @@ function generateHackathonEntries(user_ids) {
             name: `${faker.hacker.noun()} ${faker.hacker.ingverb()}`,
             description: faker.hacker.phrase(),
             developerId: u,
-            ranking: Math.random() * 10,
+            ranking: Math.random() * (10 - 5) + 5,
         });
     });
     return entries;
