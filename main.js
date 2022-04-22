@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import axios from 'axios';
 
 const axinstance = axios.create({
-    baseURL: 'http://localhost:3001/',
+    baseURL: 'http://localhost:3001/api',
 });
 
 const args = process.argv.slice(2);
